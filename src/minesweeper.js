@@ -160,11 +160,9 @@ export default class MineSweeper {
                 row.forEach((block, j) => {
                     if (block == this.spriteData.sprites.blocks.pos.empty.display_id) {
                         if (this.gameData.minefield[i][j] < 0 && this.gameData.minefield_display[i][j] != this.spriteData.sprites.blocks.pos.mine_red.display_id) {
-                            // end game
                             this.gameData.minefield_display[i][j] =
                                 this.spriteData.sprites.blocks.pos.mine.display_id;
                         } else {
-                            // open block
                             this.gameData.minefield_display[i][j] =
                                 20 + this.gameData.minefield[i][j]
                         }
@@ -186,7 +184,9 @@ export default class MineSweeper {
         } else {
             this.gameData.minefield_display[y][x] = sprites.blocks.pos.empty.display_id;
             var openEmpty = (x, y) => {
-                if (this.gameData.minefield[y][x] >= 0 && this.gameData.minefield_display[y][x] == sprites.blocks.pos.empty.display_id) {
+                if (this.gameData.minefield[y][x] >= 0 &&
+                        (this.gameData.minefield_display[y][x] == sprites.blocks.pos.empty.display_id 
+                            || this.gameData.minefield_display[y][x] == sprites.blocks.pos.flag.display_id)) {
                     if (this.gameData.minefield[y][x] == 0) {
                         this.gameData.minefield_display[y][x] = sprites.digit_blocks.pos[0].display_id;
                         if (x - 1 >= 0)
@@ -205,7 +205,7 @@ export default class MineSweeper {
             openEmpty(x, y);
         }
 
-        if (this.getRemainBlockCount() == 0) {
+        if (this.getRemainBlockCount() <= 0) {
             this.end(gameStatus.success);
         }
     }
