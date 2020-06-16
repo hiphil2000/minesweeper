@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./dist/bundle.js"></script>
+    <style>
+        body {
+            display: flex;
+        }
+
+        #option {
+            display: inline-block;
+        }
+
+        #option > table {
+            table-layout: fixed;
+        }
+
+        #option > table tr td:nth-child(1) {
+            width: 5em;
+            text-align: center;
+        }
+
+        #option > table tr input {
+            width: 4em;
+        }
+
+        #option > input {
+            width: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="display" width="300" height="600"></canvas>
+    <div id="option">
+        <table>
+            <tr>
+                <td>width</td>
+                <td><input type="number" id="width" value="10"></td>
+            </tr>
+            <tr>
+                <td>height</td>
+                <td><input type="number" id="height" value="10"></td>
+            </tr>
+            <tr>
+                <td>mine</td>
+                <td><input type="number" id="mine" value="10"></td>
+            </tr>
+            <tr>
+                <td><input type="button" id="init" value="init"></td>
+            </tr>
+        </table>
+
+    </div>
+</body>
+
+</html>

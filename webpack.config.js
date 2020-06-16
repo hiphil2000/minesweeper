@@ -1,0 +1,22 @@
+var path = require('path');
+
+module.exports = {
+    mode: 'development',
+    devtool: 'cheap-eval-source-map',
+    entry: './src/index.js',
+    output: {
+        path: path.resolve(__dirname, './dist'),
+        filename: 'bundle.js',
+        publicPath: 'dist/'
+    },
+    mode: 'none',
+    module: {
+        rules: [{
+            test: /\.(gif)$/,
+            use: [
+                'file-loader'
+            ]
+        }]
+    },
+
+};

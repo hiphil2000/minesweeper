@@ -1,0 +1,21 @@
+00: block_empty
+01: block_pressed
+02: block_flag
+03: block_unknown
+04: block_unknown_pressed
+05: mine_selected
+06: mine_mischecked
+07: mine_found
+
+10: digit_0
+11 ~ 19: digit_n
+99: digit_dash
+
+20: pblock_empty
+21~28: pblock_n
+
+30: face_default
+31: face_default_pressed
+32: face_wow
+33: face_dead
+34: face_good
