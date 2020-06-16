@@ -12,4 +12,6 @@ window.addEventListener("DOMContentLoaded", (e) => {
     document.getElementById("init").addEventListener("click", () => {
         window.mineSweeper.start();
     })
+
+    window.mineSweeper.start();
 })
